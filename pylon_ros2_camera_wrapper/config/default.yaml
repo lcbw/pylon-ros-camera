@@ -8,19 +8,20 @@
 
     #  The DeviceUserID of the camera. If empty, the first camera found in the
     #  device list will be used
-    device_user_id: ""
+    device_user_id: '1'
 
     #  The CameraInfo URL (Uniform Resource Locator) where the optional intrinsic
     #  camera calibration parameters are stored. This URL string will be parsed
     #  from the ROS-CameraInfoManager:
-    camera_info_url: ""
+    camera_info_url: "file:///home/lbayewallace/repos/mast_ros3/src/data/camera_intrinsics_ros.yaml"
 
     #  The encoding of the pixels -- channel meaning, ordering, size
     #  taken from the list of strings in include/sensor_msgs/image_encodings.h
     #  The supported encodings are 'mono8', 'bgr8', 'rgb8', 'bayer_bggr8',
     #  'bayer_gbrg8' and 'bayer_rggb8'
     #  Default values are 'mono8' and 'rgb8'
-    # image_encoding: "mono8"
+    # bayer_rggb8
+    image_encoding: 'mono8'
 
     #  Binning factor to get downsampled images. It refers here to any camera
     #  setting which combines rectangular neighborhoods of pixels into larger
@@ -34,7 +35,7 @@
     #  The desired publisher frame rate if listening to the topics.
     #  This parameter can only be set once at startup
     #  Calling the GrabImages-Action can result in a higher framerate
-    frame_rate: 5.0
+    frame_rate: 50.0
 
     #  Mode of camera's shutter.
     #  The supported modes are "rolling", "global" and "global_reset"
@@ -50,7 +51,7 @@
     ##########################################################################
 
     #  The exposure time in microseconds to be set after opening the camera.
-    # exposure: 1000.0
+#    exposure: 30000.0
 
     #  The target gain in percent of the maximal value the camera supports
     #  For USB cameras, the gain is in dB, for GigE cameras it is given in so
@@ -113,14 +114,14 @@
     #  with the MTU size the network card supports. A value greater 3000
     #  should be good (1500 for single-board computer)
     # gige:
-    #  mtu_size: 3000
+    mtu_size: 9000
 
     #  Only used for GigE cameras.
     #  The inter-package delay in ticks to prevent lost frames.
     #  For most of GigE cameras, a value of 1000 is reasonable.
     #  For cameras used on a single-board computer this value should be set to 11772.
-    # gige:
-    #  inter_pkg_delay: 1000
+#    gige:
+#    inter_pkg_delay: 512
 
     #  Only used for GigE cameras.
     #  The frame transmission delay in ticks.

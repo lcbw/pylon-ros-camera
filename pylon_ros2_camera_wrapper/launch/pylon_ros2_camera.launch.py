@@ -54,14 +54,14 @@ def generate_launch_description():
 
     declare_mtu_size_cmd = DeclareLaunchArgument(
         'mtu_size',
-        default_value='1500',
+        default_value='8192',
         description='Maximum transfer unit size. To enable jumbo frames, set it to a high value (8192 recommended)'
     )
 
     declare_startup_user_set_cmd = DeclareLaunchArgument(
         'startup_user_set',
         # possible value: Default, UserSet1, UserSet2, UserSet3, CurrentSetting
-        default_value='CurrentSetting',
+        default_value='UserSet1',
         description='Specific user set defining user parameters to run the camera.'
     )
 
@@ -73,7 +73,7 @@ def generate_launch_description():
 
     declare_enable_current_params_publisher_cmd = DeclareLaunchArgument(
         'enable_current_params_publisher',
-        default_value='true',
+        default_value='false',
         description='Enable/Disable the current parameter publishing.'
     )
 
